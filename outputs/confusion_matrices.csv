@@ -1,0 +1,4 @@
+model,tn,fp,fn,tp
+Random Forest,5399,26,56,5535
+Gradient Boosting,5352,73,80,5511
+Logistic Regression,4964,461,277,5314
