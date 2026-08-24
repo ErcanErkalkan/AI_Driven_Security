@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+
+# Working datasets are obtained from the cited source and are not redistributed here.
+data/*.csv
+
+# Fresh local reruns
+reproduced_outputs/
+preflight_outputs/
