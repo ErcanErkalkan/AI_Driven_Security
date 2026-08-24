@@ -1,0 +1,8 @@
+category,columns
+Raw numeric/flow features,77
+Features after cleaning,69
+Removed constant/uninformative,"Bwd_PSH_Flags, Bwd_URG_Flags, Fwd_Avg_Bytes_per_Bulk, Fwd_Avg_Packets_per_Bulk, Fwd_Avg_Bulk_Rate, Bwd_Avg_Bytes_per_Bulk, Bwd_Avg_Packets_per_Bulk, Bwd_Avg_Bulk_Rate"
+Exact duplicate feature/label rows removed before split,12598
+Feature-vector duplicate groups after duplicate control,12
+Train-test exact feature overlap rows,0
+Leakage-prone identifiers,"Flow IDs, IP addresses, timestamps, and non-predictive row IDs should be removed when present; the script supports manual removal through --drop-columns."
