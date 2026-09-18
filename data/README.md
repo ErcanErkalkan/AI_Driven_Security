@@ -1,10 +1,10 @@
 # Data for the reported public-sample validation
 
-The manuscript results use the public `CICIDS2017_sample.csv` working sample obtained from Western-OC2-Lab:
+The published article results use the public `CICIDS2017_sample.csv` working sample obtained from Western-OC2-Lab:
 
 https://github.com/Western-OC2-Lab/Intrusion-Detection-System-Using-Machine-Learning/blob/main/data/CICIDS2017_sample.csv
 
-The file is not redistributed in this GitHub branch. Place it here as:
+The file is not redistributed in this repository. Place it here as:
 
 ```text
 data/CICIDS2017_sample.csv
