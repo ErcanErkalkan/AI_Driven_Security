@@ -16,6 +16,9 @@ Use this checklist before creating the first formal GitHub release and Zenodo ar
 - [x] Automated dataset/split preflight added in GitHub Actions.
 - [x] Validated CPython 3.11 dependency snapshot recorded in `requirements-ci-lock.txt`.
 - [x] Zenodo-compatible metadata prepared in `.zenodo.json`.
+- [x] Explicit reproducibility evidence/rerun guide added in `REPRODUCIBILITY.md`.
+- [x] Draft first-release notes prepared in `RELEASE_NOTES_DRAFT.md`.
+- [x] Duplicate CI workflow removed; one canonical reproducibility workflow retained.
 
 ## Before the first formal release
 
