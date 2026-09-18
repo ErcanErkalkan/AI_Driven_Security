@@ -2,7 +2,7 @@
 
 ## Dataset / split integrity
 
-The exact working CSV was checked against the manuscript protocol. A fresh preprocessing and split preflight produced:
+The exact working CSV was checked against the published article protocol. A fresh preprocessing and split preflight produced:
 
 | Check | Value |
 |---|---:|
@@ -23,7 +23,7 @@ The eight removed constant/uninformative fields were:
 
 ## Reported-output cross-check
 
-The committed output artifacts agree with the manuscript values after the manuscript's displayed rounding:
+The committed output artifacts agree with the published article values after the article's displayed rounding:
 
 - Random Forest: accuracy 0.992556 → 0.993; balanced accuracy 0.992596 → 0.993; precision 0.995325 → 0.995; recall 0.989984 → 0.990; F1 0.992647 → 0.993.
 - ROC-AUC 0.999228 → 0.9992; PR-AUC 0.998961 → 0.9990; Brier 0.005873 → 0.0059.
@@ -37,7 +37,7 @@ The committed output artifacts agree with the manuscript values after the manusc
 
 - Python source syntax check: passed.
 - Real-data preprocessing/split preflight: passed with the exact counts above.
-- End-to-end synthetic-data smoke test of the manuscript working script: passed, including the SHAP path.
+- End-to-end synthetic-data smoke test of the original working script: passed, including the SHAP path.
 - Secret / credential scan of the working source: no API tokens, passwords, private keys, or hard-coded personal filesystem paths detected.
 
 The committed `outputs/` directory is the reported-run evidence package. A new full model-training rerun can be performed with the command in `README.md`; it is intentionally kept separate from the immutable reported outputs.
