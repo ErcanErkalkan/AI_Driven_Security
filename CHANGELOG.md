@@ -5,6 +5,7 @@ All notable changes to the public reproducibility artifact are documented here.
 ## Unreleased
 
 ### Added
+- MIT License for repository software and authored documentation.
 - GitHub Actions reproducibility-integrity workflow.
 - Explicit `REPRODUCIBILITY.md` evidence-level and rerun guide.
 - Draft `v1.0.0` release notes in `RELEASE_NOTES_DRAFT.md`.
