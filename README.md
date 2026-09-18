@@ -1,20 +1,31 @@
 # Governance-Aware XAI Cybersecurity — Reproducibility Artifact
 
-Public reproducibility artifact for the manuscript:
+Public reproducibility artifact for the published research article:
 
 **Governance-Aware Explainable AI for Cybersecurity Threat Detection and Risk-Based Response**
 
+**Author:** Ercan Erkalkan  
+**Journal:** Transactions on Computer Science and Applications (TCSA)  
+**Volume / Issue:** 3(1)  
+**Pages:** 14–26  
+**Published:** 17 September 2026  
+**Official article page:** https://dergipark.org.tr/en/pub/tcsa/article/1949200  
+**Persistent article link (IZ):** https://izlik.org/JA39XH74US
+
 ## Scope
 
-This branch documents and reproduces the leakage-aware public-sample validation reported in the manuscript. It is **not** presented as a full official CICIDS2017 benchmark.
+This repository documents and reproduces the leakage-aware public-sample validation reported in the published article. It is **not** presented as a full official CICIDS2017 benchmark.
 
-## Contents
+The public implementation is intentionally separated from the immutable reported-run evidence in `outputs/`. Fresh reruns should be written to a new output directory so that the reported artifacts remain unchanged.
 
-- `scripts/reproduce_protocol.py` — public implementation of the reported duplicate-control, group-aware hold-out, calibrated ML, confidence-interval, CV, SHAP and per-label evaluation protocol.
+## Repository contents
+
+- `scripts/reproduce_protocol.py` — public implementation of the reported duplicate-control, group-aware hold-out, calibrated ML, confidence-interval, cross-validation, SHAP, per-label evaluation, and illustrative risk-priority protocol.
 - `requirements.txt` — Python dependencies.
-- `data/README.md` — exact working-sample source, expected file name, size and SHA-256 digest. The dataset itself is not redistributed here.
-- `outputs/` — the CSV/JSON artifacts from the reported manuscript run, retained for direct cross-checking.
-- `VALIDATION.md` — integrity and manuscript-consistency checks.
+- `data/README.md` — exact working-sample source, expected file name, size, row count, and SHA-256 digest. The dataset itself is not redistributed here.
+- `outputs/` — CSV/JSON artifacts from the reported article run, retained for direct cross-checking.
+- `VALIDATION.md` — dataset/split integrity, manuscript-to-output consistency, and execution checks.
+- `CITATION.cff` — machine-readable citation metadata for this reproducibility artifact and the associated published article.
 
 ## Environment
 
@@ -33,6 +44,7 @@ data/CICIDS2017_sample.csv
 ```
 
 Source:
+
 https://github.com/Western-OC2-Lab/Intrusion-Detection-System-Using-Machine-Learning/blob/main/data/CICIDS2017_sample.csv
 
 Expected working-file integrity:
@@ -91,10 +103,22 @@ The committed `outputs/model_metrics.csv` records:
 - Brier score: 0.005873 (reported as 0.0059)
 - confusion matrix: TN=5399, FP=26, FN=56, TP=5535
 
-The original manuscript working script retained in the author package has SHA-256:
+The original article working script retained in the author package has SHA-256:
 
 ```text
 c41a0f86247b1563358f78a49c83d96fd2f90fe71f7b97b95e86d453457fade6
 ```
 
-The public runner in this branch is a cleaned reproducibility implementation of the same reported protocol; the committed `outputs/` files are the artifacts used for manuscript cross-checking.
+The public runner in this repository is a cleaned reproducibility implementation of the same reported protocol; the committed `outputs/` files are the artifacts used for article cross-checking.
+
+## Interpretation boundary
+
+The reported metrics are leakage-aware results on the cited public CICIDS2017-derived working sample. They should not be interpreted as a full official CICIDS2017 benchmark or as evidence of deployment performance across operational security environments. The risk-response examples are illustrative because the public CSV does not contain organization-specific asset criticality.
+
+## Citation
+
+Please cite the published article as:
+
+> Erkalkan, E. (2026). Governance-Aware Explainable AI for Cybersecurity Threat Detection and Risk-Based Response. *Transactions on Computer Science and Applications*, 3(1), 14–26. https://izlik.org/JA39XH74US
+
+GitHub-compatible citation metadata are also provided in `CITATION.cff`.
