@@ -1,5 +1,7 @@
 # Governance-Aware XAI Cybersecurity — Reproducibility Artifact
 
+[![Reproducibility integrity](https://github.com/ErcanErkalkan/AI_Driven_Security/actions/workflows/reproducibility.yml/badge.svg)](https://github.com/ErcanErkalkan/AI_Driven_Security/actions/workflows/reproducibility.yml)
+
 Public reproducibility artifact for the published research article:
 
 **Governance-Aware Explainable AI for Cybersecurity Threat Detection and Risk-Based Response**
@@ -26,6 +28,9 @@ The public implementation is intentionally separated from the immutable reported
 - `outputs/` — CSV/JSON artifacts from the reported article run, retained for direct cross-checking.
 - `VALIDATION.md` — dataset/split integrity, manuscript-to-output consistency, and execution checks.
 - `CITATION.cff` — machine-readable citation metadata for this reproducibility artifact and the associated published article.
+- `.zenodo.json` — deposit metadata prepared for archival; no repository DOI is claimed until an actual Zenodo deposit/release mints one.
+- `.github/workflows/reproducibility.yml` — automated syntax, dataset-integrity, and deterministic preflight checks.
+- `CHANGELOG.md` — public artifact history.
 
 ## Environment
 
@@ -114,6 +119,14 @@ The public runner in this repository is a cleaned reproducibility implementation
 ## Interpretation boundary
 
 The reported metrics are leakage-aware results on the cited public CICIDS2017-derived working sample. They should not be interpreted as a full official CICIDS2017 benchmark or as evidence of deployment performance across operational security environments. The risk-response examples are illustrative because the public CSV does not contain organization-specific asset criticality.
+
+## Automated reproducibility check
+
+GitHub Actions downloads the cited working sample, verifies its SHA-256 digest and byte size, runs the deterministic `--preflight-only` path, and fails if the published-protocol invariants change. The workflow does **not** overwrite the committed reported-run outputs and does not claim a new full model-training replication.
+
+## Archival status
+
+Zenodo-compatible metadata are prepared in `.zenodo.json`. A repository/archive DOI is intentionally **not** listed here until a real GitHub release is archived and Zenodo returns a minted DOI.
 
 ## Citation
 
