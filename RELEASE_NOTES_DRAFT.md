@@ -59,12 +59,13 @@ The automated workflow verifies:
 
 ## Release blockers that must be resolved before publication
 
-1. Select and add an explicit repository/software license.
-2. Confirm `v1.0.0` as the desired first formal release tag.
-3. Confirm the canonical reproducibility workflow is green on the release commit.
-4. Create the GitHub Release.
-5. Archive the release in Zenodo.
-6. Insert the minted Zenodo DOI only after Zenodo actually returns it.
+The repository is now licensed under the MIT License. The remaining release steps are:
+
+1. Confirm `v1.0.0` as the desired first formal release tag.
+2. Confirm the canonical reproducibility workflow is green on the release commit.
+3. Create the GitHub Release.
+4. Archive the release in Zenodo.
+5. Insert the minted Zenodo DOI only after Zenodo actually returns it.
 
 ## Suggested release title
 
