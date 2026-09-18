@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this reproducibility artifact, please cite the associated published article."
 title: "Governance-Aware XAI Cybersecurity — Reproducibility Artifact"
 type: software
+license: MIT
 authors:
   - family-names: Erkalkan
     given-names: Ercan
