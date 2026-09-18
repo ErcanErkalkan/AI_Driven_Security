@@ -22,7 +22,7 @@ Use this checklist before creating the first formal GitHub release and Zenodo ar
 
 ## Before the first formal release
 
-- [ ] Select and add an explicit software/repository license. Do not infer a license from repository visibility.
+- [x] MIT License selected and added; README, `CITATION.cff`, and `.zenodo.json` synchronized.
 - [ ] Confirm the desired semantic release tag (for example, a chosen `vX.Y.Z`).
 - [ ] Confirm the current `main` commit is the exact release commit.
 - [ ] Confirm the reproducibility-integrity workflow is green on the release commit.
@@ -37,4 +37,4 @@ No repository/archive DOI should be claimed before Zenodo actually mints one. Th
 
 ## License rule
 
-Public visibility does not grant an open-source license by itself. A formal license should be added only after the repository owner chooses one.
+The repository software and documentation authored for this artifact are licensed under the MIT License. Third-party datasets and external materials retain their original terms and are not relicensed by this repository.
