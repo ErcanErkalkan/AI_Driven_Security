@@ -28,5 +28,6 @@
       "relation": "isSupplementTo",
       "scheme": "url"
     }
-  ]
+  ],
+  "license": "MIT"
 }
