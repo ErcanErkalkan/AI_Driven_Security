@@ -1,0 +1,32 @@
+{
+  "title": "Governance-Aware XAI Cybersecurity — Reproducibility Artifact",
+  "upload_type": "software",
+  "description": "Reproducibility artifact for the published article Governance-Aware Explainable AI for Cybersecurity Threat Detection and Risk-Based Response. The repository contains the public preprocessing, leakage-aware split, calibrated machine-learning, confidence-interval, cross-validation, SHAP, per-label evaluation, and illustrative risk-priority workflow together with immutable reported-run outputs.",
+  "creators": [
+    {
+      "name": "Erkalkan, Ercan",
+      "orcid": "0000-0001-9259-7112"
+    }
+  ],
+  "keywords": [
+    "cybersecurity",
+    "explainable artificial intelligence",
+    "XAI",
+    "intrusion detection",
+    "risk-based response",
+    "CICIDS2017",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://dergipark.org.tr/en/pub/tcsa/article/1949200",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://izlik.org/JA39XH74US",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
