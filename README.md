@@ -30,6 +30,7 @@ The public implementation is intentionally separated from the immutable reported
 - `VALIDATION.md` — dataset/split integrity, published-article/output consistency, and execution checks.
 - `REPRODUCIBILITY.md` — evidence-level separation, deterministic preflight, full rerun instructions, and interpretation boundaries.
 - `CITATION.cff` — machine-readable citation metadata for this reproducibility artifact and the associated published article.
+- `LICENSE` — MIT License covering the repository software and documentation authored for this artifact.
 - `.zenodo.json` — deposit metadata prepared for archival; no repository DOI is claimed until an actual Zenodo deposit/release mints one.
 - `.github/workflows/reproducibility.yml` — automated syntax, dataset-integrity, and deterministic preflight checks.
 - `CHANGELOG.md` — public artifact history.
@@ -125,6 +126,12 @@ The reported metrics are leakage-aware results on the cited public CICIDS2017-de
 ## Automated reproducibility check
 
 GitHub Actions downloads the cited working sample, verifies its SHA-256 digest and byte size, runs the deterministic `--preflight-only` path, and fails if the published-protocol invariants change. The workflow does **not** overwrite the committed reported-run outputs and does not claim a new full model-training replication.
+
+## License
+
+The repository software and documentation authored for this artifact are released under the **MIT License**. See `LICENSE`.
+
+This repository does not relicense third-party datasets or external materials; their original terms remain applicable.
 
 ## Archival status
 
