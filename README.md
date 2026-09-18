@@ -27,7 +27,8 @@ The public implementation is intentionally separated from the immutable reported
 - `requirements-ci-lock.txt` — exact dependency snapshot validated by the reproducibility CI on CPython 3.11 / Ubuntu 24.04.
 - `data/README.md` — exact working-sample source, expected file name, size, row count, and SHA-256 digest. The dataset itself is not redistributed here.
 - `outputs/` — CSV/JSON artifacts from the reported article run, retained for direct cross-checking.
-- `VALIDATION.md` — dataset/split integrity, manuscript-to-output consistency, and execution checks.
+- `VALIDATION.md` — dataset/split integrity, published-article/output consistency, and execution checks.
+- `REPRODUCIBILITY.md` — evidence-level separation, deterministic preflight, full rerun instructions, and interpretation boundaries.
 - `CITATION.cff` — machine-readable citation metadata for this reproducibility artifact and the associated published article.
 - `.zenodo.json` — deposit metadata prepared for archival; no repository DOI is claimed until an actual Zenodo deposit/release mints one.
 - `.github/workflows/reproducibility.yml` — automated syntax, dataset-integrity, and deterministic preflight checks.
