@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility artifact, please cite the associated published article."
+title: "Governance-Aware XAI Cybersecurity — Reproducibility Artifact"
+type: software
+authors:
+  - family-names: Erkalkan
+    given-names: Ercan
+    orcid: "https://orcid.org/0000-0001-9259-7112"
+repository-code: "https://github.com/ErcanErkalkan/AI_Driven_Security"
+url: "https://github.com/ErcanErkalkan/AI_Driven_Security"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Erkalkan
+      given-names: Ercan
+      orcid: "https://orcid.org/0000-0001-9259-7112"
+  title: "Governance-Aware Explainable AI for Cybersecurity Threat Detection and Risk-Based Response"
+  journal: "Transactions on Computer Science and Applications"
+  volume: 3
+  issue: 1
+  year: 2026
+  start: 14
+  end: 26
+  url: "https://izlik.org/JA39XH74US"
