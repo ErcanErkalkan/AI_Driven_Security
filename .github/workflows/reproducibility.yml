@@ -1,0 +1,99 @@
+name: Reproducibility integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "requirements.txt"
+      - "data/README.md"
+      - ".github/workflows/reproducibility.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "requirements.txt"
+      - "data/README.md"
+      - ".github/workflows/reproducibility.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    name: Dataset and split integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Check Python syntax
+        run: python -m py_compile scripts/reproduce_protocol.py
+
+      - name: Download the cited working sample
+        run: |
+          mkdir -p data ci_outputs
+          curl --fail --location --retry 3 \
+            "https://raw.githubusercontent.com/Western-OC2-Lab/Intrusion-Detection-System-Using-Machine-Learning/main/data/CICIDS2017_sample.csv" \
+            --output data/CICIDS2017_sample.csv
+
+      - name: Verify working-sample integrity
+        run: |
+          echo "03ba3626a0f9bb73b90c56772893e68b0577285130891cd7d811542c17b032dd  data/CICIDS2017_sample.csv" | sha256sum --check -
+          test "$(wc -c < data/CICIDS2017_sample.csv)" -eq 19868205
+
+      - name: Run deterministic preflight
+        run: |
+          python scripts/reproduce_protocol.py \
+            --input data/CICIDS2017_sample.csv \
+            --label Label \
+            --output-dir ci_outputs \
+            --preflight-only
+
+      - name: Assert published-protocol invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = json.loads(Path("ci_outputs/preflight.json").read_text(encoding="utf-8"))
+          expected = {
+              "n_rows_loaded": 56661,
+              "n_rows_used": 44063,
+              "exact_duplicate_rows_removed": 12598,
+              "raw_feature_count": 77,
+              "features_after_cleaning": 69,
+              "train_rows": 33047,
+              "test_rows": 11016,
+              "train_test_exact_feature_overlap_rows": 0,
+              "split_method": "stratified_group_kfold_holdout_4_folds",
+          }
+          for key, value in expected.items():
+              actual = p.get(key)
+              if actual != value:
+                  raise SystemExit(f"{key}: expected {value!r}, got {actual!r}")
+          print("All reproducibility preflight invariants match the published protocol.")
+          PY
+
+      - name: Upload preflight evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproducibility-preflight
+          path: |
+            ci_outputs/preflight.json
+            ci_outputs/train_test_distribution.csv
+          if-no-files-found: error
